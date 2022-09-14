@@ -1,6 +1,6 @@
 const express = require("express");
 const server = express();
-const port = 3000;
+const port = process.env.PORT || 3000;
 const student = require("./studentList.json");
 
 server.post("/student", (req, res) => {
@@ -12,6 +12,6 @@ server.get("/student/studentList", (req, res) => {
   res.send(student);
 });
 
-server.listen(process.env.port || port, () => {
+server.listen(port, () => {
   console.log(`Server starter at port ${port}`);
 });
