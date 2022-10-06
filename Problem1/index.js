@@ -4,7 +4,7 @@ const student = require("./student.json");
 
 server.post("/student", (req, res) => {
   console.log(student);
-  res.send("dummy");
+  res.send(JSON.stringify({ result: "Success" }));
 });
 
 server.get("/student/getData", (req, res) => {
